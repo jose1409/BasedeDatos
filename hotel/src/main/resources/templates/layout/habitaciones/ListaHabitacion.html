@@ -1,0 +1,22 @@
+<div th:fragment="ListaHabitacion">
+
+    <div class="row p-4" style="background-color: var(--primary-color)">
+        <div>
+            Habitaciones tienda virtual
+            <button type="button" class="btn btn-primary">Primary</button>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <div th:replace="components/CardImage :: CardImage(title='Dynamic Title', description='This is a dynamically passed description.', url='https://dus6dayednven.cloudfront.net/app/uploads/2021/02/SEBASTIAN-PRADO.jpg')"></div>
+        </div>
+        <div class="col-md-4">
+            <div th:replace="components/CardImage :: CardImage(title='Dynamic Title', description='This is a dynamically passed description.', url='https://dus6dayednven.cloudfront.net/app/uploads/2021/02/SEBASTIAN-PRADO.jpg')"></div>
+        </div>
+        <div class="col-md-4">
+            <div th:replace="components/CardImage :: CardImage(title='Dynamic Title', description='This is a dynamically passed description.', url='https://dus6dayednven.cloudfront.net/app/uploads/2021/02/SEBASTIAN-PRADO.jpg')"></div>
+        </div>
+    </div>
+</div>
