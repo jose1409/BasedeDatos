@@ -1,14 +1,14 @@
 <div th:fragment="ListaHabitacion">
 
-    <div class="row p-4" style="background-color: var(--primary-color)">
-        <div>
-            Habitaciones tienda virtual
-            <button type="button" class="btn btn-primary">Primary</button>
+    <div class="row p-4 container-fluid mb-5" style="background-color: white">
+        <div class="d-flex align-items-center" style="gap: 12px;">
+            <p class="mb-0 h1">Habitaciones</p>
+            <p class="mb-0 mt-2 h4">tienda virtual</p>
+            <button type="button" class="btn btn-primary">Agregar</button>
         </div>
     </div>
 
-
-    <div class="row">
+    <div class="row container-fluid">
         <div class="col-md-4">
             <div th:replace="components/CardImage :: CardImage(title='Dynamic Title', description='This is a dynamically passed description.', url='https://dus6dayednven.cloudfront.net/app/uploads/2021/02/SEBASTIAN-PRADO.jpg')"></div>
         </div>
