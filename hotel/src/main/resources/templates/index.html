@@ -4,25 +4,11 @@
     <head th:replace="components/Head :: head"></head>
 
     <body style="background-color: #e5e7e9">
-        <!--   <div th:replace="layout/habitaciones/ListaHabitacion :: ListaHabitacion" />   -->
-
-        <div class="container-fluid">
-            <div class="row flex-nowrap">
-                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-                    <div th:replace="components/SideBar :: SideBar" />
-                </div>
-
-                <div class="col py-3" id="habitaciones-container" th:if="${render == 1}">
-                    <div th:replace="layout/habitaciones/ListaHabitacion :: ListaHabitacion" />
-                </div>
-
-                <div class="col py-3" id="hoteles-container" th:if="${render == 2}">
-                    <div th:replace="layout/hoteles/ListaHoteles :: ListaHoteles" />
-                </div>
-
-            </div>
-        </div>
+        
+        <div th:replace="layout/AdminView :: AdminView" />
+        
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script th:src="@{/js/HabitacionScript.js}"></script>
+        <script th:src="@{/js/AdminSideBar.js}"></script>
     </body>
 </html>

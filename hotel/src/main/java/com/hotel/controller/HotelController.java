@@ -1,7 +1,7 @@
 package com.hotel.controller;
 
-import com.hotel.domain.Habitacion;
-import com.hotel.service.HabitacionService;
+import com.hotel.domain.Hotel;
+import com.hotel.service.HotelService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,17 +14,17 @@ import org.springframework.web.multipart.MultipartFile;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("/habitacion")
-public class HabitacionController {
+@RequestMapping("/hotel")
+public class HotelController {
 
     @Autowired
-    private HabitacionService _HabitacionService;
+    private HotelService _HotelService;
 
     @GetMapping("/inicio")
     public String inicio(Model model) {
-        List<Habitacion> result = _HabitacionService.getHabitaciones(true);
-        model.addAttribute("Habitaciones", result);
-        model.addAttribute("totalHabitaciones", result.size());
-        return "layout/habitaciones/ListaHabitacion :: ListaHabitacion";
+        List<Hotel> result = _HotelService.getHoteles(true);
+        model.addAttribute("Hotel", result);
+        model.addAttribute("totalHoteles", result.size());
+        return "layout/hoteles/ListaHoteles :: ListaHoteles";
     }
 }
