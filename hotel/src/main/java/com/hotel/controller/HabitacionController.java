@@ -16,16 +16,15 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @RequestMapping("/habitacion")
 public class HabitacionController {
-    
+
     @Autowired
     private HabitacionService _HabitacionService;
-    
+
     @GetMapping("/inicio")
-    public String inicio(Model model){
+    public String inicio(Model model) {
         List<Habitacion> result = _HabitacionService.getHabitaciones(true);
-        System.err.println("Habitacion: "+ result);
         model.addAttribute("Habitaciones", result);
         model.addAttribute("totalHabitaciones", result.size());
-        return "/layout/habitaciones/ListaHabitacion";
+        return "layout/habitaciones/ListaHabitacion :: ListaHabitacion";
     }
 }

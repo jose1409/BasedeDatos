@@ -2,8 +2,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xlmns:th="http://www.thymeleaf.org">
     <head th:replace="components/Head :: head"></head>
-    
+
     <body style="background-color: #e5e7e9">
-        <div th:replace="layout/habitaciones/ListaHabitacion :: ListaHabitacion" />
+        <!--   <div th:replace="layout/habitaciones/ListaHabitacion :: ListaHabitacion" />   -->
+
+        <div class="container-fluid">
+            <div class="row flex-nowrap">
+                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                    <div th:replace="components/SideBar :: SideBar" />
+                </div>
+
+                <div class="col py-3" id="habitaciones-container">
+                    <div th:replace="layout/habitaciones/ListaHabitacion :: ListaHabitacion" />
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Importar jQuery (puede estar al inicio o al final del body) -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Importar tu archivo JavaScript -->
+        <script th:src="@{/js/HabitacionScript.js}"></script>
     </body>
 </html>
