@@ -25,6 +25,7 @@ public class HabitacionController {
         List<Habitacion> result = _HabitacionService.getHabitaciones(true);
         model.addAttribute("Habitaciones", result);
         model.addAttribute("totalHabitaciones", result.size());
+        model.addAttribute("render", 1);
         return "layout/habitaciones/ListaHabitacion :: ListaHabitacion";
     }
 }

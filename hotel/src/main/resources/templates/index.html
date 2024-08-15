@@ -12,17 +12,17 @@
                     <div th:replace="components/SideBar :: SideBar" />
                 </div>
 
-                <div class="col py-3" id="habitaciones-container">
+                <div class="col py-3" id="habitaciones-container" th:if="${render == 1}">
                     <div th:replace="layout/habitaciones/ListaHabitacion :: ListaHabitacion" />
+                </div>
+
+                <div class="col py-3" id="hoteles-container" th:if="${render == 2}">
+                    <div th:replace="layout/hoteles/ListaHoteles :: ListaHoteles" />
                 </div>
 
             </div>
         </div>
-
-        <!-- Importar jQuery (puede estar al inicio o al final del body) -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-        <!-- Importar tu archivo JavaScript -->
         <script th:src="@{/js/HabitacionScript.js}"></script>
     </body>
 </html>
