@@ -20,7 +20,7 @@ public class HabitacionServiceImpl implements HabitacionService {
 
     @Override
     public void guardar(Habitacion habitacion) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        habitacionDAO.save(habitacion);
     }
 
     @Override

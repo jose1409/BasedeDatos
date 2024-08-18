@@ -5,7 +5,7 @@
             <div class="d-flex align-items-center" style="gap: 12px;">
                 <p class="mb-0 h1">Habitaciones</p>
                 <p class="mb-0 mt-2 h4">tienda virtual</p>
-                <button type="button" class="btn btn-primary">Agregar</button>
+                <button onclick="loadComponent('/habitacion/crear')" class="btn btn-primary">Agregar</button>
             </div>
         </div>
     </div>
@@ -41,44 +41,42 @@
             <table class="table align-middle mb-0 bg-white">
                 <thead class="bg-light">
                     <tr>
-                        <th>Name</th>
-                        <th>Title</th>
-                        <th>Status</th>
-                        <th>Position</th>
+                        <th># Habitacion</th>
+                        <th>Precio</th>
+                        <th>Descripcion</th>
+                        <th>Capacidad</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr th:each="habitacion : ${Habitaciones}">
                         <td>
                             <div class="d-flex align-items-center">
                                 <img
-                                    src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                                    src="https://www.govisitcostarica.co.cr/images/uploads/detail/mob/g-hotel-suerre-deluxe-rooms-outside.jpg"
                                     class="rounded-circle"
                                     alt=""
                                     style="width: 45px; height: 45px"
                                     />
                                 <div class="ms-3">
-                                    <p class="fw-bold mb-1">Kate Hunington</p>
-                                    <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                    <p class="fw-bold mb-1" th:text="${habitacion.numeroHabitacion}"/>
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1">Designer</p>
-                            <p class="text-muted mb-0">UI/UX</p>
+                            <p class="fw-normal mb-1" th:text="${habitacion.precio}"/>
                         </td>
                         <td>
-                            <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
+                            <p class="fw-normal mb-1" th:text="${habitacion.descripcion}">
                         </td>
-                        <td>Senior</td>
+                        <td th:text="${habitacion.maximaCapacidad}"></td>
                         <td>
                             <button
                                 type="button"
                                 class="btn btn-link btn-rounded btn-sm fw-bold"
                                 data-mdb-ripple-color="dark"
                                 >
-                                Edit
+                                Editar
                             </button>
                         </td>
                     </tr>
