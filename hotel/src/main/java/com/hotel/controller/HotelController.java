@@ -9,9 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller
 @RequestMapping("/hotel")
@@ -23,8 +21,21 @@ public class HotelController {
     @GetMapping("/inicio")
     public String inicio(Model model) {
         List<Hotel> result = _HotelService.getHoteles(true);
-        model.addAttribute("Hotel", result);
+        model.addAttribute("Hoteles", result);
         model.addAttribute("totalHoteles", result.size());
-        return "layout/hoteles/ListaHoteles :: ListaHoteles";
+        System.out.println("datos" + result.getFirst());
+        return "layout/habitaciones/ListaHabitacion :: ListaHabitacion";
+    }
+    
+    @PostMapping("/guardar")
+    public String guardarHabitacion(@ModelAttribute Hotel hotel) {
+        _HotelService.guardar(hotel);
+        return "redirect:/";
+    }
+    
+    @GetMapping("/crear")
+    public String mostrarFormulario(Model model) {
+        model.addAttribute("hotel", new Hotel());
+        return "layout/habitaciones/AgregarHabitacion :: AgregarHabitacion";
     }
 }

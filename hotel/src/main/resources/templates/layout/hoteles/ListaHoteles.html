@@ -43,13 +43,12 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Telefono</th>
-                        <th>Correo</th>
                         <th>Direccion</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr th:each="hotel : ${Hoteles}">
                         <td>
                             <div class="d-flex align-items-center">
                                 <img
@@ -59,19 +58,18 @@
                                     style="width: 45px; height: 45px"
                                     />
                                 <div class="ms-3">
-                                    <p class="fw-bold mb-1">Kate Hunington</p>
-                                    <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                    <p class="fw-bold mb-1" th:text="${hotel.nombre}"/>
+                                    <p class="text-muted mb-0" th:text="${hotel.correo}">
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1">Designer</p>
-                            <p class="text-muted mb-0">UI/UX</p>
+                            <p class="fw-normal mb-1" th:text="${hotel.telefono}"/>
                         </td>
                         <td>
-                            <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
+                            <!-- <p class="fw-normal mb-1" th:text="${hotel.direccion.direccionUno}">-->
                         </td>
-                        <td>Senior</td>
+                        <!-- comment <td th:text="${hotel.maximaCapacidad}"></td> -->
                         <td>
                             <button
                                 type="button"

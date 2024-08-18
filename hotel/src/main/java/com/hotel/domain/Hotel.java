@@ -1,10 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.hotel.domain;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,20 +12,20 @@ import java.io.Serializable;
 import lombok.Data;
 
 @Data  //Automaticamente crear los set y get
-@Entity 
+@Entity
 @Table(name="hotel") //Con cual tabla mapeara el objeto
 public class Hotel implements Serializable {
-    
+
     private static final long serialVersionUID = 1L;
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idHotel;
     private String nombre;
     private String telefono;
     private String correo;
-    
-    @OneToOne
+
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_direccion")
     Direccion direccion;
 
@@ -42,6 +39,4 @@ public class Hotel implements Serializable {
         this.correo = correo;
         this.direccion = direccion;
     }
-    
-    
 }
