@@ -8,6 +8,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import lombok.Data;
+import lombok.ToString;
 
 @Data  //Automaticamente crear los set y get
 @Entity 
@@ -25,6 +26,7 @@ public class Direccion implements Serializable {
     private String direccionUno;
     
     @OneToOne(mappedBy = "direccion")
+    @ToString.Exclude
     private Hotel hotel;
     
     public Direccion() {

@@ -24,7 +24,7 @@ public class HotelController {
         model.addAttribute("Hoteles", result);
         model.addAttribute("totalHoteles", result.size());
         System.out.println("datos" + result.getFirst());
-        return "layout/habitaciones/ListaHabitacion :: ListaHabitacion";
+        return "layout/hoteles/ListaHoteles";
     }
     
     @PostMapping("/guardar")
@@ -36,6 +36,6 @@ public class HotelController {
     @GetMapping("/crear")
     public String mostrarFormulario(Model model) {
         model.addAttribute("hotel", new Hotel());
-        return "layout/habitaciones/AgregarHabitacion :: AgregarHabitacion";
+        return "layout/hoteles/AgregarHoteles :: AgregarHoteles";
     }
 }

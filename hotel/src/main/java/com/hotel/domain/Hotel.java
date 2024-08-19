@@ -10,6 +10,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import lombok.Data;
+import lombok.ToString;
 
 @Data  //Automaticamente crear los set y get
 @Entity
@@ -27,6 +28,7 @@ public class Hotel implements Serializable {
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_direccion")
+    @ToString.Exclude
     Direccion direccion;
 
     public Hotel() {

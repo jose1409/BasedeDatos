@@ -1,8 +1,7 @@
-function loadComponent(url) {
-    console.log(url);
+function loadComponent(url, type) {
         $.ajax({
             url: url,
-            type: "GET",
+            type: type,
             success: function(data) {
                 $('#content-container').html(data);
             },

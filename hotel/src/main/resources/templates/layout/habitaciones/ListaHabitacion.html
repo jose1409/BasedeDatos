@@ -78,6 +78,14 @@
                                 >
                                 Editar
                             </button>
+                            <button
+                                th:onclick="|loadComponent('/habitacion/eliminar/' + ${habitacion.idHabitacion}, 'DELETE')|"
+                                class="btn btn-danger btn-rounded btn-sm fw-bold"
+                                data-mdb-ripple-color="dark"
+                                >
+                                Eliminar
+                            </button>
+
                         </td>
                     </tr>
                 </tbody>

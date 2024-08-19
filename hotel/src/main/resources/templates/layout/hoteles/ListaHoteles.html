@@ -5,7 +5,7 @@
             <div class="d-flex align-items-center" style="gap: 12px;">
                 <p class="mb-0 h1">Hoteles</p>
                 <p class="mb-0 mt-2 h4">Gestion Hotelera</p>
-                <button type="button" class="btn btn-primary">Agregar</button>
+                <button onclick="loadComponent('/hotel/crear')" class="btn btn-primary">Agregar</button>
             </div>
         </div>
     </div>
@@ -67,7 +67,7 @@
                             <p class="fw-normal mb-1" th:text="${hotel.telefono}"/>
                         </td>
                         <td>
-                            <!-- <p class="fw-normal mb-1" th:text="${hotel.direccion.direccionUno}">-->
+                            <p class="fw-normal mb-1" th:text="${hotel.direccion.canton} + ${' '+hotel.direccion.provincia}">
                         </td>
                         <!-- comment <td th:text="${hotel.maximaCapacidad}"></td> -->
                         <td>
