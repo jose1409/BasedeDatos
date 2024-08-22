@@ -1,11 +1,11 @@
-<div th:fragment="ListaHabitacion">
+<div th:fragment="ListaCliente">
 
     <div class="container-fluid">
         <div class="row p-4 mb-5" style="background-color: white">
             <div class="d-flex align-items-center" style="gap: 12px;">
-                <p class="mb-0 h1">Habitaciones</p>
+                <p class="mb-0 h1">Clientes</p>
                 <p class="mb-0 mt-2 h4">Gestion Hotelera</p>
-                <button onclick="loadComponent('/habitacion/crear')" class="btn btn-primary">Agregar</button>
+                <button onclick="loadComponent('/cliente/crear')" class="btn btn-primary">Agregar</button>
             </div>
         </div>
     </div>
@@ -41,15 +41,15 @@
             <table class="table align-middle mb-0 bg-white">
                 <thead class="bg-light">
                     <tr>
-                        <th># Habitacion</th>
-                        <th>Precio</th>
-                        <th>Descripcion</th>
-                        <th>Capacidad</th>
+                        <th>Codigo</th>
+                        <th>Nombre Completo</th>
+                        <th>Cedula</th>
+                        <th>Correo</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="habitacion : ${Habitaciones}">
+                    <tr th:each="cliente : ${clientes}">
                         <td>
                             <div class="d-flex align-items-center">
                                 <img
@@ -59,17 +59,19 @@
                                     style="width: 45px; height: 45px"
                                     />
                                 <div class="ms-3">
-                                    <p class="fw-bold mb-1" th:text="${habitacion.numeroHabitacion}"/>
+                                    <p class="fw-bold mb-1" th:text="${cliente.codigo}"/>
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1" th:text="${'₡' + habitacion.precio}"/>
+                            <p class="fw-normal mb-1" th:text="${cliente.nombre + ' ' + cliente.primer_apellido + ' ' + cliente.segundo_apellido}"/>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1" th:text="${habitacion.descripcion}">
+                            <p class="fw-normal mb-1" th:text="${cliente.cedula}">
                         </td>
-                        <td th:text="${habitacion.maximaCapacidad}"></td>
+                        <td>
+                            <p class="fw-normal mb-1" th:text="${cliente.correo}">
+                        </td>
                         <td>
                             <button
                                 type="button"
@@ -78,14 +80,6 @@
                                 >
                                 Editar
                             </button>
-                            <button
-                                th:onclick="|loadComponent('/habitacion/eliminar/' + ${habitacion.idHabitacion}, 'DELETE')|"
-                                class="btn btn-danger btn-rounded btn-sm fw-bold"
-                                data-mdb-ripple-color="dark"
-                                >
-                                Eliminar
-                            </button>
-
                         </td>
                     </tr>
                 </tbody>

@@ -1,17 +1,17 @@
-<div th:fragment="AgregarHabitacion">
+<div th:fragment="AgregarCliente">
     <div class="container-fluid">
         <div class="row p-4 mb-5" style="background-color: white">
             <div class="d-flex align-items-center" style="gap: 12px;">
                 <p class="mb-0 h1">Agregar Habitacion</p>
                 <p class="mb-0 mt-2 h4">tienda virtual</p>
-                <button onclick="loadComponent('/habitacion/inicio')" class="btn btn-primary">Volver</button>
+                <button onclick="loadComponent('/cliente/inicio')" class="btn btn-primary">Volver</button>
             </div>
         </div>
     </div>
 
     <div class="container-fluid">
 
-        <form class="form-floating" th:action="@{/habitacion/guardar}" th:object="${habitacion}" method="post">
+        <form class="form-floating" th:action="@{/cliente/guardar}" th:object="${cliente}" method="post">
             <div class="mb-3 form-floating">
                 <input type="text" class="form-control" id="floatingNumeroHabitacion" th:field="*{numeroHabitacion}" placeholder="Número de Habitación">
                 <label for="floatingNumeroHabitacion">Número de Habitación</label>

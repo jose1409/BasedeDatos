@@ -1,7 +1,9 @@
 package com.hotel.controller;
 
 import com.hotel.domain.Habitacion;
+import com.hotel.domain.Hotel;
 import com.hotel.service.HabitacionService;
+import com.hotel.service.HotelService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,7 @@ public class HabitacionController {
 
     @Autowired
     private HabitacionService _HabitacionService;
+    private HotelService _HotelService;
 
     @GetMapping("/inicio")
     public String inicio(Model model) {
@@ -34,7 +37,9 @@ public class HabitacionController {
     
     @GetMapping("/crear")
     public String mostrarFormulario(Model model) {
+        List<Hotel> result = _HotelService.getHoteles(true);
         model.addAttribute("habitacion", new Habitacion());
+        model.addAttribute("hoteles", result);
         return "layout/habitaciones/AgregarHabitacion :: AgregarHabitacion";
     }
 }

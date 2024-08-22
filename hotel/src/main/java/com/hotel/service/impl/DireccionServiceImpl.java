@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.hotel.service.impl;
 
 import com.hotel.dao.DireccionDao;
@@ -16,13 +12,13 @@ public class DireccionServiceImpl {
     private DireccionDao direccionDao;
 
     @Transactional(readOnly = true)
-    public List<Direccion> getHoteles(boolean activos) {
+    public List<Direccion> getDirecciones() {
         var lista = direccionDao.findAll();
         return lista;
     }
 
     @Transactional(readOnly = true)
-    public Direccion getHotel(Direccion direccion) {
+    public Direccion getDireccion(Direccion direccion) {
         return direccionDao.findById(direccion.getIdDireccion()).orElse(null);
     }
 
