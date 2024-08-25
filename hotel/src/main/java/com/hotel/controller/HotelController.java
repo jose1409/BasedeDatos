@@ -1,6 +1,5 @@
 package com.hotel.controller;
 
-import com.hotel.domain.Direccion;
 import com.hotel.domain.Hotel;
 import com.hotel.service.DireccionService;
 import com.hotel.service.HotelService;

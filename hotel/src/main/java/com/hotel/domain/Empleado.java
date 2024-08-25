@@ -12,22 +12,26 @@ import lombok.Data;
 
 @Data  //Automaticamente crear los set y get
 @Entity
-@Table(name="cliente") //Con cual tabla mapeara el objeto
-public class Cliente implements Serializable {
+@Table(name="empleado") //Con cual tabla mapeara el objeto
+public class Empleado implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCliente;
+    private Long idEmpleado;
+    private boolean estadoTrabajo;
+    private String cargo;
     
     @OneToOne
     @JoinColumn(name = "id_persona")
     Persona persona;
 
-    public Cliente() {
+    public Empleado() {
     }
 
-    public Cliente(Long idCliente, Persona persona) {
-        this.idCliente = idCliente;
+    public Empleado(Long idEmpleado, boolean estadoTrabajo, String cargo, Persona persona) {
+        this.idEmpleado = idEmpleado;
+        this.estadoTrabajo = estadoTrabajo;
+        this.cargo = cargo;
         this.persona = persona;
     }
 }
