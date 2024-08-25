@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.hotel.dao.PersonaDAO;
 
+
 @Service
 public class PersonaServiceImpl implements PersonaService {
 

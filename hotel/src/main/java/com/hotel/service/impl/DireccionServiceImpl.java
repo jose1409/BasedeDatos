@@ -11,6 +11,7 @@ import com.hotel.dao.DireccionDAO;
 @Service
 public class DireccionServiceImpl implements DireccionService {
 
+
     @Autowired
     private DireccionDAO direccionDao;
 
