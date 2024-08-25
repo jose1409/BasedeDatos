@@ -1,18 +1,18 @@
 package com.hotel.service.impl;
 
-import com.hotel.dao.HotelDao;
 import com.hotel.domain.Hotel;
 import com.hotel.service.HotelService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.hotel.dao.HotelDAO;
 
 @Service
 public class HotelServiceImpl implements HotelService{
     
     @Autowired
-    private HotelDao hotelDao;
+    private HotelDAO hotelDao;
     
     @Transactional(readOnly = true)
     public List<Hotel> getHoteles(boolean activos) {

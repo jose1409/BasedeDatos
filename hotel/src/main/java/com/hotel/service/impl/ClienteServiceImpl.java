@@ -1,17 +1,17 @@
 package com.hotel.service.impl;
 
-import com.hotel.dao.ClienteDao;
 import com.hotel.domain.Cliente;
 import com.hotel.service.ClienteService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.hotel.dao.ClienteDAO;
 
 @Service
 public class ClienteServiceImpl implements ClienteService {
 
     @Autowired
-    private ClienteDao clienteDao;
+    private ClienteDAO clienteDao;
 
     @Override
     public List<Cliente> getClientes() {

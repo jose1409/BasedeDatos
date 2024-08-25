@@ -59,18 +59,18 @@
                                     style="width: 45px; height: 45px"
                                     />
                                 <div class="ms-3">
-                                    <p class="fw-bold mb-1" th:text="${cliente.idPersona}"/>
+                                    <p class="fw-bold mb-1" th:text="${cliente.persona.idPersona}"/>
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1" th:text="${cliente.nombre + ' ' + cliente.primer_apellido + ' ' + cliente.segundo_apellido}"/>
+                            <p class="fw-normal mb-1" th:text="${cliente.persona.nombre} + ${' ' + cliente.persona.primerApellido} + ${' ' + cliente.persona.segundoApellido}"/>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1" th:text="${cliente.cedula}">
+                            <p class="fw-normal mb-1" th:text="${cliente.persona.cedula}">
                         </td>
                         <td>
-                            <p class="fw-normal mb-1" th:text="${cliente.correo}">
+                            <p class="fw-normal mb-1" th:text="${cliente.persona.correo}">
                         </td>
                         <td>
                             <button

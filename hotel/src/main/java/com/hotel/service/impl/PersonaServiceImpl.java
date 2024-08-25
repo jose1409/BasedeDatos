@@ -1,17 +1,18 @@
 package com.hotel.service.impl;
 
-import com.hotel.dao.PersonaDao;
 import com.hotel.domain.Persona;
 import com.hotel.service.PersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.hotel.dao.PersonaDAO;
+
 
 @Service
 public class PersonaServiceImpl implements PersonaService {
 
     @Autowired
-    private PersonaDao personaDao;
+    private PersonaDAO personaDao;
 
     @Override
     public List<Persona> getPersonas() {
