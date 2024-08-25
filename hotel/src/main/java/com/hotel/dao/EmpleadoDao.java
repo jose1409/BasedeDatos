@@ -1,12 +1,12 @@
 package com.hotel.dao;
 
-import com.hotel.domain.Direccion;
+import com.hotel.domain.Empleado;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author Usuario
  */
-public interface DireccionDAO extends JpaRepository<Direccion, Long>{
+public interface EmpleadoDAO extends JpaRepository<Empleado, Long>{
     
 }

@@ -11,6 +11,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author Usuario
  */
-public interface HotelDao extends JpaRepository<Hotel, Long>{
+public interface HotelDAO extends JpaRepository<Hotel, Long>{
     
 }

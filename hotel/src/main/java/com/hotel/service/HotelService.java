@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.hotel.service;
 
 import com.hotel.domain.Hotel;
 import java.util.List;
 
-/**
- *
- * @author Usuario
- */
 public interface HotelService {
 
     // Se obtiene un listado de categorias en un List

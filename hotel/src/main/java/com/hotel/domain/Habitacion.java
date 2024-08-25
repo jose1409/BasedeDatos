@@ -1,7 +1,14 @@
 package com.hotel.domain;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "habitacion")
 public class Habitacion {
@@ -28,62 +35,4 @@ public class Habitacion {
 
     @Column(name = "estado_limpieza")
     private String estadoLimpieza;
-
-    // Getters y Setters
-
-    public int getIdHabitacion() {
-        return idHabitacion;
-    }
-
-    public void setIdHabitacion(int idHabitacion) {
-        this.idHabitacion = idHabitacion;
-    }
-
-    public String getNumeroHabitacion() {
-        return numeroHabitacion;
-    }
-
-    public void setNumeroHabitacion(String numeroHabitacion) {
-        this.numeroHabitacion = numeroHabitacion;
-    }
-
-    public long getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(long precio) {
-        this.precio = precio;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public int getMaximaCapacidad() {
-        return maximaCapacidad;
-    }
-
-    public void setMaximaCapacidad(int maximaCapacidad) {
-        this.maximaCapacidad = maximaCapacidad;
-    }
-
-    public int getIdHotel() {
-        return idHotel;
-    }
-
-    public void setIdHotel(int idHotel) {
-        this.idHotel = idHotel;
-    }
-
-    public String getEstadoLimpieza() {
-        return estadoLimpieza;
-    }
-
-    public void setEstadoLimpieza(String estadoLimpieza) {
-        this.estadoLimpieza = estadoLimpieza;
-    }
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package com.hotel.service;
 
 import com.hotel.domain.Direccion;
@@ -9,8 +5,8 @@ import java.util.List;
 
 public interface DireccionService {
     
-        // Se obtiene un listado de categorias en un List
-    public List<Direccion> getDirecciones(boolean activos);
+    // Se obtiene un listado de categorias en un List
+    public List<Direccion> getDirecciones();
 
     // Se obtiene un Categoria, a partir del id de un categoria
     public Direccion getDireccion(Direccion direccion);
