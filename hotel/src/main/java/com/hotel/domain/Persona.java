@@ -17,7 +17,6 @@ public class Persona implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPersona;
 
-    private String codigo;
     private String nombre;
     private String primerApellido;
     private String segundoApellido;
@@ -27,9 +26,8 @@ public class Persona implements Serializable {
     public Persona() {
     }
 
-    public Persona(Long idPersona, String codigo, String nombre, String primerApellido, String segundoApellido, String cedula, String correo) {
+    public Persona(Long idPersona, String nombre, String primerApellido, String segundoApellido, String cedula, String correo) {
         this.idPersona = idPersona;
-        this.codigo = codigo;
         this.nombre = nombre;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
