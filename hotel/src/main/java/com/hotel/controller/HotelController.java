@@ -19,6 +19,7 @@ public class HotelController {
 
     @Autowired
     private HotelService _HotelService;
+    @Autowired
     private DireccionService _DireccionService;
 
     @GetMapping("/inicio")
@@ -31,9 +32,10 @@ public class HotelController {
 
     @PostMapping("/guardar")
     public String guardarHabitacion(@ModelAttribute Hotel hotel) {
-        _HotelService.guardar(hotel);
         _DireccionService.guardar(hotel.getDireccion());
-        return "redirect:/";
+        _HotelService.guardar(hotel);
+        
+        return "redirect:/hotel/inicio";
     }
 
     @GetMapping("/crear")

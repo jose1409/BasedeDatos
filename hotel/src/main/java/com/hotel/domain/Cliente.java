@@ -19,7 +19,7 @@ public class Cliente implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCliente;
     
-    @OneToOne(mappedBy = "persona")
+    @OneToOne
     @JoinColumn(name = "id_persona")
     Persona persona;
 

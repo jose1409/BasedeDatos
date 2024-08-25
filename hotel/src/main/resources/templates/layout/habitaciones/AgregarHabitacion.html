@@ -28,8 +28,9 @@
                 <input type="number" class="form-control" id="floatingMaximaCapacidad" th:field="*{maximaCapacidad}" placeholder="Capacidad Máxima">
                 <label for="floatingMaximaCapacidad">Capacidad Máxima</label>
             </div>
+
             <div class="mb-3 form-floating">
-                <select class="form-select" id="floatingIdHotel" th:field="*{idHotel}">
+                <select class="form-select" id="floatingIdHotel" th:field="*{hotel.idHotel}">
                     <option value="" disabled selected>Selecciona un Hotel</option>
                     <option th:each="hotel : ${hoteles}" 
                             th:value="${hotel.idHotel}" 
@@ -37,10 +38,16 @@
                 </select>
                 <label for="floatingIdHotel">Hotel</label>
             </div>
-            <div class="mb-3 form-floating">
-                <input type="text" class="form-control" id="floatingEstadoLimpieza" th:field="*{estadoLimpieza}" placeholder="Estado de Limpieza">
-                <label for="floatingEstadoLimpieza">Estado de Limpieza</label>
+
+             <div class="mb-3 form-floating">
+                <select class="form-select" id="floatingLimpiar" th:field="*{estadoLimpieza}">
+                    <option value="" disabled selected>Selecciona una opcion</option>
+                    <option th:value="1" th:text="Si">Hotel</option>
+                    <option th:value="0" th:text="No">Hotel</option>
+                </select>
+                <label for="floatingIdHotel">Limpieza</label>
             </div>
+            
             <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
     </div>

@@ -5,7 +5,9 @@ import com.hotel.domain.Cliente;
 import com.hotel.service.ClienteService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ClienteServiceImpl implements ClienteService {
 
     @Autowired
