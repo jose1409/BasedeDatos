@@ -34,4 +34,9 @@ public class HotelServiceImpl implements HotelService{
     public void eliminar(Hotel hotel) {
         hotelDao.delete(hotel);
     }
+    
+    @Override
+    public Hotel getById(Long id) {
+        return hotelDao.findById(id).orElse(null);
+    }
 }

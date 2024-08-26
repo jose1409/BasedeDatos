@@ -72,11 +72,21 @@
                         </td>
                         <td>
                             <button
+                                th:onclick="'loadComponent(\'/hotel/eliminar/' + ${hotel.idHotel} + '\', \'GET\')'"
                                 type="button"
                                 class="btn btn-link btn-rounded btn-sm fw-bold"
                                 data-mdb-ripple-color="dark"
                                 >
-                                Editar
+                                Eliminar
+                            </button>
+                            
+                            <button
+                                th:onclick="'loadComponent(\'/hotel/modificar/' + ${hotel.idHotel} + '\', \'GET\')'"
+                                type="button"
+                                class="btn btn-link btn-rounded btn-sm fw-bold"
+                                data-mdb-ripple-color="dark"
+                                >
+                                Modificar
                             </button>
                         </td>
                     </tr>

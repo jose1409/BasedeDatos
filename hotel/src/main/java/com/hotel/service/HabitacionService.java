@@ -18,4 +18,5 @@ public interface HabitacionService {
     // Se elimina el categoria que tiene el id pasado por parámetro
     public void eliminar(Habitacion habitacion);
     
+    public Habitacion getById(Long id);
 }
