@@ -34,4 +34,8 @@ public class ClienteServiceImpl implements ClienteService {
         clienteDao.delete(cliente);
     }
 
+    @Override
+    public Cliente getById(Long id) {
+        return clienteDao.findById(id).orElse(null);
+    }
 }

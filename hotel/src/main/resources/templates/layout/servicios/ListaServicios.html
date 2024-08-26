@@ -1,11 +1,11 @@
-<div th:fragment="ListaPlatillos">
+<div th:fragment="ListaServicios">
 
     <div class="container-fluid">
         <div class="row p-4 mb-5" style="background-color: white">
             <div class="d-flex align-items-center" style="gap: 12px;">
-                <p class="mb-0 h1">Platillos</p>
+                <p class="mb-0 h1">Servicios</p>
                 <p class="mb-0 mt-2 h4">Gestion Hotelera</p>
-                <button onclick="loadComponent('/platillo/crear')" class="btn btn-primary">Agregar</button>
+                <button onclick="loadComponent('/servicio/crear')" class="btn btn-primary">Agregar</button>
             </div>
         </div>
     </div>
@@ -41,14 +41,13 @@
             <table class="table align-middle mb-0 bg-white">
                 <thead class="bg-light">
                     <tr>
+                        <th>N°Servicio</th>
                         <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="platillo : ${Platillos}">
+                    <tr th:each="servicio : ${Servicios}">
                         <td>
                             <div class="d-flex align-items-center">
                                 <img
@@ -58,16 +57,13 @@
                                     style="width: 45px; height: 45px"
                                     />
                                 <div class="ms-3">
-                                    <p class="fw-bold mb-1" th:text="${platillo.nombre}"/>
-                                    <p class="text-muted mb-0" th:text="${platillo.restaurante.nombre} + ${' / ' + platillo.restaurante.hotel.nombre}">
+                                    <p class="fw-bold mb-1" th:text="${servicio.numeroServicio}"/>
+<!--                                    <p class="text-muted mb-0" th:text="${servicio.hotel.nombre}">-->
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1" th:text="${'₡' + platillo.precio}"/>
-                        </td>
-                        <td>
-                            <p class="fw-normal mb-1" th:text="${platillo.cantidad}"/>
+                            <p class="fw-normal mb-1" th:text="${servicio.nombre}"/>
                         </td>
                         <td>
                             <button

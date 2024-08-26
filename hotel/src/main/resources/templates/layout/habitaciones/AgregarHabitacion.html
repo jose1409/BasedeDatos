@@ -2,8 +2,8 @@
     <div class="container-fluid">
         <div class="row p-4 mb-5" style="background-color: white">
             <div class="d-flex align-items-center" style="gap: 12px;">
-                <p class="mb-0 h1">Agregar Habitacion</p>
-                <p class="mb-0 mt-2 h4">tienda virtual</p>
+                <p class="mb-0 h1">Habitacion</p>
+                <p class="mb-0 mt-2 h4">Gestion Hotelera</p>
                 <button onclick="loadComponent('/habitacion/inicio')" class="btn btn-primary">Volver</button>
             </div>
         </div>
@@ -42,10 +42,10 @@
              <div class="mb-3 form-floating">
                 <select class="form-select" id="floatingLimpiar" th:field="*{estadoLimpieza}">
                     <option value="" disabled selected>Selecciona una opcion</option>
-                    <option th:value="1" th:text="Si">Hotel</option>
-                    <option th:value="0" th:text="No">Hotel</option>
+                    <option th:value="Ocupado" th:text="Ocupado"></option>
+                    <option th:value="Libre" th:text="Libre"></option>
                 </select>
-                <label for="floatingIdHotel">Limpieza</label>
+                <label for="floatingLimpiar">Estado de Habitacion</label>
             </div>
             
             <button type="submit" class="btn btn-primary">Guardar</button>

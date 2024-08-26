@@ -2,44 +2,34 @@
     <div class="container-fluid">
         <div class="row p-4 mb-5" style="background-color: white">
             <div class="d-flex align-items-center" style="gap: 12px;">
-                <p class="mb-0 h1">Agregar Habitacion</p>
-                <p class="mb-0 mt-2 h4">tienda virtual</p>
+                <p class="mb-0 h1">Agregar Cliente</p>
+                <p class="mb-0 mt-2 h4">Gestion Hotelera</p>
                 <button onclick="loadComponent('/cliente/inicio')" class="btn btn-primary">Volver</button>
             </div>
         </div>
     </div>
 
     <div class="container-fluid">
-
         <form class="form-floating" th:action="@{/cliente/guardar}" th:object="${cliente}" method="post">
             <div class="mb-3 form-floating">
-                <input type="text" class="form-control" id="floatingNumeroHabitacion" th:field="*{numeroHabitacion}" placeholder="Número de Habitación">
-                <label for="floatingNumeroHabitacion">Número de Habitación</label>
+                <input type="text" class="form-control" id="floatingNombre" th:field="*{nombre}" placeholder="Nombre">
+                <label for="floatingNombre">Nombre</label>
             </div>
             <div class="mb-3 form-floating">
-                <input type="number" class="form-control" id="floatingPrecio" th:field="*{precio}" placeholder="Precio">
-                <label for="floatingPrecio">Precio</label>
+                <input type="text" class="form-control" id="floatingPrimerApellido" th:field="*{primerApellido}" placeholder="Primer Apellido">
+                <label for="floatingPrimerApellido">Primer Apellido</label>
             </div>
             <div class="mb-3 form-floating">
-                <textarea class="form-control" id="floatingDescripcion" th:field="*{descripcion}" placeholder="Descripción"></textarea>
-                <label for="floatingDescripcion">Descripción</label>
+                <input type="text" class="form-control" id="floatingSegundoApellido" th:field="*{segundoApellido}" placeholder="Segundo Apellido">
+                <label for="floatingSegundoApellido">Segundo Apellido</label>
             </div>
             <div class="mb-3 form-floating">
-                <input type="number" class="form-control" id="floatingMaximaCapacidad" th:field="*{maximaCapacidad}" placeholder="Capacidad Máxima">
-                <label for="floatingMaximaCapacidad">Capacidad Máxima</label>
+                <input type="text" class="form-control" id="floatingCedula" th:field="*{cedula}" placeholder="Cédula">
+                <label for="floatingCedula">Cédula</label>
             </div>
             <div class="mb-3 form-floating">
-                <select class="form-select" id="floatingIdHotel" th:field="*{idHotel}">
-                    <option value="" disabled selected>Selecciona un Hotel</option>
-                    <option th:each="hotel : ${hoteles}" 
-                            th:value="${hotel.idHotel}" 
-                            th:text="${hotel.nombre}">Hotel</option>
-                </select>
-                <label for="floatingIdHotel">Hotel</label>
-            </div>
-            <div class="mb-3 form-floating">
-                <input type="text" class="form-control" id="floatingEstadoLimpieza" th:field="*{estadoLimpieza}" placeholder="Estado de Limpieza">
-                <label for="floatingEstadoLimpieza">Estado de Limpieza</label>
+                <input type="email" class="form-control" id="floatingCorreo" th:field="*{correo}" placeholder="Correo">
+                <label for="floatingCorreo">Correo</label>
             </div>
             <button type="submit" class="btn btn-primary">Guardar</button>
         </form>

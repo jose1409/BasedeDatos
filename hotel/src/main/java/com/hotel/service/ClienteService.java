@@ -14,7 +14,9 @@ public interface ClienteService {
     // Se inserta un nuevo Cliente si el id del Cliente esta vacío
     // Se actualiza un Cliente si el id del Cliente NO esta vacío
     public void guardar(Cliente cliente);
-
+    
     // Se elimina el Cliente que tiene el id pasado por parámetro
     public void eliminar(Cliente cliente);
+    
+    public Cliente getById(Long id);
 }
