@@ -33,4 +33,10 @@ public class HabitacionServiceImpl implements HabitacionService {
         var lista = habitacionDAO.findAll();
         return lista;
     }
+    
+    @Override
+    public Habitacion getById(Long id) {
+        return habitacionDAO.findById(id).orElse(null);
+    }
+
 }

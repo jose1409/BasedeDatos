@@ -17,4 +17,6 @@ public interface HotelService {
 
     // Se elimina el categoria que tiene el id pasado por parámetro
     public void eliminar(Hotel hotel);
+    
+    public Hotel getById(Long id);
 }

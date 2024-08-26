@@ -72,6 +72,7 @@
                         <td th:text="${habitacion.maximaCapacidad}"></td>
                         <td>
                             <button
+                                th:onclick="'loadComponent(\'/habitacion/modificar/' + ${habitacion.idHabitacion} + '\', \'GET\')'"
                                 type="button"
                                 class="btn btn-link btn-rounded btn-sm fw-bold"
                                 data-mdb-ripple-color="dark"
@@ -79,7 +80,7 @@
                                 Editar
                             </button>
                             <button
-                                th:onclick="|loadComponent('/habitacion/eliminar/' + ${habitacion.idHabitacion}, 'DELETE')|"
+                                th:onclick="'loadComponent(\'/habitacion/eliminar/' + ${habitacion.idHabitacion} + '\', \'GET\')'"
                                 class="btn btn-danger btn-rounded btn-sm fw-bold"
                                 data-mdb-ripple-color="dark"
                                 >
