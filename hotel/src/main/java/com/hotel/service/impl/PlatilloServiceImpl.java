@@ -5,8 +5,9 @@ import com.hotel.domain.Platillo;
 import com.hotel.service.PlatilloService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class PlatilloServiceImpl implements PlatilloService{
     
     

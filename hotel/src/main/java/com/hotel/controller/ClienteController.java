@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -48,6 +49,23 @@ public class ClienteController {
     @GetMapping("/crear")
     public String mostrarFormulario(Model model) {
         model.addAttribute("cliente", new Persona());
-        return "layout/clientees/AgregarCliente :: AgregarCliente";
+        return "layout/clientes/AgregarCliente :: AgregarCliente";
+    }
+    
+    @GetMapping("/eliminar/{idCliente}")
+    public String clienteEliminar(@PathVariable("idCliente") Long idCliente, Model model) {
+        Cliente cliente = _ClienteService.getById(idCliente);
+        if (cliente != null) {
+            _PersonaService.eliminar(cliente.getPersona());
+        } else {
+            System.out.println("Hotel no encontrado con el ID: " + idCliente);
+        }
+        return "redirect:/cliente/inicio";
+    }
+    @GetMapping("/modificar/{idCliente}")
+    public String clienteModificar(@PathVariable("idCliente") Long idCliente, Model model) {
+        Cliente cliente = _ClienteService.getById(idCliente);
+        model.addAttribute("cliente", cliente.getPersona());
+        return "layout/clientes/AgregarCliente :: AgregarCliente";
     }
 }

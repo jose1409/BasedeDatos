@@ -33,13 +33,9 @@ public class EmpleadoController {
 
     //Modificar y guardar persona y luego conexion con empleado
     @PostMapping("/guardar")
-    public String guardarCliente(@ModelAttribute Persona persona) {
+    public String guardarCliente(@ModelAttribute Empleado empleado) {
         //Guardo la persona
-        _PersonaService.guardar(persona);
-        //Creo el empleado
-        Empleado empleado = new Empleado();
-        //Guardo la persona en empleado
-        empleado.setPersona(persona);
+        _PersonaService.guardar(empleado.getPersona());
         //Guardo en base de datos el nuevo empleado
         _EmpleadoService.guardar(empleado);
         return "redirect:/";
@@ -47,7 +43,7 @@ public class EmpleadoController {
 
     @GetMapping("/crear")
     public String mostrarFormulario(Model model) {
-        model.addAttribute("empleado", new Persona());
-        return "layout/empleadoes/AgregarCliente :: AgregarCliente";
+        model.addAttribute("empleado", new Empleado());
+        return "layout/empleados/AgregarEmpleados :: AgregarEmpleados";
     }
 }
