@@ -1,0 +1,56 @@
+<div th:fragment="ModificarEmpleado">
+    <div class="container-fluid">
+        <div class="row p-4 mb-5" style="background-color: white">
+            <div class="d-flex align-items-center" style="gap: 12px;">
+                <p class="mb-0 h1">Agregar Empleado</p>
+                <p class="mb-0 mt-2 h4">Gestion Hotelera</p>
+                <button onclick="loadComponent('/empleado/inicio')" class="btn btn-primary">Volver</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+        <form class="form-floating" th:action="@{/empleado/actualizar}" th:object="${empleado}" method="post">
+            <!-- Campo para el estado del trabajo -->
+            <div class="mb-3 form-floating">
+                <select class="form-select" id="floatingEstadoTrabajo" th:field="*{estadoTrabajo}">
+                    <option value="true" th:text="'Activo'">Activo</option>
+                    <option value="false" th:text="'Inactivo'">Inactivo</option>
+                </select>
+                <label for="floatingEstadoTrabajo">Estado de Actividad</label>
+            </div>
+
+            <!--            Campo para el cargo -->
+            <div class="mb-3 form-floating">
+                <input type="text" class="form-control" id="floatingCargo" th:field="*{cargo}" placeholder="Cargo">
+                <label for="floatingCargo">Cargo</label>
+            </div>
+
+            <!--            Campos para la persona asociada -->
+            <div class="mb-3 form-floating">
+                <input type="text" class="form-control" id="floatingNombre" th:field="*{persona.nombre}" placeholder="Nombre">
+                <label for="floatingNombre">Nombre</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="text" class="form-control" id="floatingPrimerApellido" th:field="*{persona.primerApellido}" placeholder="Primer Apellido">
+                <label for="floatingPrimerApellido">Primer Apellido</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="text" class="form-control" id="floatingSegundoApellido" th:field="*{persona.segundoApellido}" placeholder="Segundo Apellido">
+                <label for="floatingSegundoApellido">Segundo Apellido</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="number" class="form-control" id="floatingCedula" th:field="*{persona.cedula}" placeholder="Cédula">
+                <label for="floatingCedula">Cédula</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="email" class="form-control" id="floatingCorreo" th:field="*{persona.correo}" placeholder="Correo">
+                <label for="floatingCorreo">Correo</label>
+            </div>
+            <input type="hidden" class="form-control" id="floatingCorreo" th:field="*{idEmpleado}">
+             <input type="hidden" class="form-control" id="floatingCorreo" th:field="*{persona.idPersona}">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>

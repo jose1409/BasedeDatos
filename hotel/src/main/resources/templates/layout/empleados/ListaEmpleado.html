@@ -81,12 +81,25 @@
                             <p class="fw-normal mb-1" th:text="${empleado.cargo}">
                         </td>
                         <td>
+                            <p class="fw-normal mb-1" th:text="${empleado.idEmpleado}">
+                        </td>
+                        <td>
                             <button
+                                th:onclick="'loadComponent(\'/empleado/modificar/' + ${empleado.idEmpleado} + '\', \'GET\')'"
                                 type="button"
                                 class="btn btn-link btn-rounded btn-sm fw-bold"
                                 data-mdb-ripple-color="dark"
                                 >
                                 Editar
+                            </button>
+                            
+                            <button
+                                th:onclick="'loadComponent(\'/empleado/eliminar/' + ${empleado.idEmpleado} + '\', \'Get\')'"
+                                type="button"
+                                class="btn btn-link btn-rounded btn-sm fw-bold"
+                                data-mdb-ripple-color="dark"
+                                >
+                                Eliminar
                             </button>
                         </td>
                     </tr>

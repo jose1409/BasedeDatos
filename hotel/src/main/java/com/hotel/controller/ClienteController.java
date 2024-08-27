@@ -46,6 +46,16 @@ public class ClienteController {
         return "redirect:/";
     }
     
+    //Modificar y guardar persona y luego conexion con cliente
+    @PostMapping("/actualizar")
+    public String guardarCliente(@ModelAttribute Cliente cliente) {
+        //Guardo la persona
+        _PersonaService.guardar(cliente.getPersona());
+        //Guardo en base de datos el nuevo cliente
+        _ClienteService.guardar(cliente);
+        return "redirect:/";
+    }
+    
     @GetMapping("/crear")
     public String mostrarFormulario(Model model) {
         model.addAttribute("cliente", new Persona());
@@ -65,7 +75,7 @@ public class ClienteController {
     @GetMapping("/modificar/{idCliente}")
     public String clienteModificar(@PathVariable("idCliente") Long idCliente, Model model) {
         Cliente cliente = _ClienteService.getById(idCliente);
-        model.addAttribute("cliente", cliente.getPersona());
-        return "layout/clientes/AgregarCliente :: AgregarCliente";
+        model.addAttribute("cliente", cliente);
+        return "layout/clientes/ModificarCliente :: ModificarCliente";
     }
 }

@@ -33,5 +33,9 @@ public class EmpleadoServiceImpl implements EmpleadoService {
     public void eliminar(Empleado empleado) {
         empleadoDAO.delete(empleado);
     }
-
+    
+    @Override
+    public Empleado getById(Long idEmpleado){
+        return empleadoDAO.findById(idEmpleado).orElse(null);
+    }
 }
