@@ -8,11 +8,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @Controller
 @RequestMapping("/habitacion")
@@ -46,22 +49,22 @@ public class HabitacionController {
         return "layout/habitaciones/AgregarHabitacion :: AgregarHabitacion";
     }
 
-    @GetMapping("/eliminar/{idCategoria}")
-    public String categoriaEliminar(@PathVariable("idCategoria") Long idCategoria) {
-        System.out.println("Id de la categoria: "+idCategoria);
-        Habitacion habitacion = _HabitacionService.getById(idCategoria);
+    @GetMapping("/eliminar/{idHabitacion}")
+    public String habitacionEliminar(@PathVariable("idHabitacion") Long idHabitacion) {
+        System.out.println("Id de la categoria: " + idHabitacion);
+        Habitacion habitacion = _HabitacionService.getById(idHabitacion);
         if (habitacion != null) {
             _HabitacionService.eliminar(habitacion);
             System.out.println("Habitacion eliminada: " + habitacion);
         } else {
-            System.out.println("Habitacion no encontrada con el ID: " + idCategoria);
+            System.out.println("Habitacion no encontrada con el ID: " + idHabitacion);
         }
         return "redirect:/habitacion/inicio";
     }
-    
-    @GetMapping("/modificar/{idCategoria}")
-    public String categoriaModificar(@PathVariable("idCategoria") Long idCategoria, Model model) {
-        Habitacion habitacion = _HabitacionService.getById(idCategoria);
+
+    @GetMapping("/modificar/{idHabitacion}")
+    public String habitacionModificar(@PathVariable("idHabitacion") Long idHabitacion, Model model) {
+        Habitacion habitacion = _HabitacionService.getById(idHabitacion);
         List<Hotel> result = _HotelService.getHoteles(true);
         model.addAttribute("hoteles", result);
         model.addAttribute("habitacion", habitacion);
