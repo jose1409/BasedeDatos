@@ -1,4 +1,4 @@
-<div th:fragment="AgregarCliente">
+<div th:fragment="ModificarCliente">
     <div class="container-fluid">
         <div class="row p-4 mb-5" style="background-color: white">
             <div class="d-flex align-items-center" style="gap: 12px;">
@@ -10,28 +10,30 @@
     </div>
 
     <div class="container-fluid">
-        <form class="form-floating" th:action="@{/cliente/guardar}" th:object="${cliente}" method="post">
+        <form class="form-floating" th:action="@{/cliente/actualizar}" th:object="${cliente}" method="post">
             <div class="mb-3 form-floating">
-                <input type="text" class="form-control" id="floatingNombre" th:field="*{nombre}" placeholder="Nombre">
+                <input type="text" class="form-control" id="floatingNombre" th:field="*{persona.nombre}" placeholder="Nombre">
                 <label for="floatingNombre">Nombre</label>
             </div>
             <div class="mb-3 form-floating">
-                <input type="text" class="form-control" id="floatingPrimerApellido" th:field="*{primerApellido}" placeholder="Primer Apellido">
+                <input type="text" class="form-control" id="floatingPrimerApellido" th:field="*{persona.primerApellido}" placeholder="Primer Apellido">
                 <label for="floatingPrimerApellido">Primer Apellido</label>
             </div>
             <div class="mb-3 form-floating">
-                <input type="text" class="form-control" id="floatingSegundoApellido" th:field="*{segundoApellido}" placeholder="Segundo Apellido">
+                <input type="text" class="form-control" id="floatingSegundoApellido" th:field="*{persona.segundoApellido}" placeholder="Segundo Apellido">
                 <label for="floatingSegundoApellido">Segundo Apellido</label>
             </div>
             <div class="mb-3 form-floating">
-                <input type="text" class="form-control" id="floatingCedula" th:field="*{cedula}" placeholder="Cédula">
+                <input type="text" class="form-control" id="floatingCedula" th:field="*{persona.cedula}" placeholder="Cédula">
                 <label for="floatingCedula">Cédula</label>
             </div>
             <div class="mb-3 form-floating">
-                <input type="email" class="form-control" id="floatingCorreo" th:field="*{correo}" placeholder="Correo">
+                <input type="email" class="form-control" id="floatingCorreo" th:field="*{persona.correo}" placeholder="Correo">
                 <label for="floatingCorreo">Correo</label>
             </div>
-            <input type="hidden" class="form-control" id="floatingCorreo" th:field="*{idPersona}">
+            <input type="hidden" class="form-control" id="floatingCorreo" th:field="*{persona.idPersona}">
+            <input type="hidden" class="form-control" id="floatingCorreo" th:field="*{idCliente}">
+            
             <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
     </div>

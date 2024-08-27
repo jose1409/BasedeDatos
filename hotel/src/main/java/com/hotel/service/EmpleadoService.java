@@ -18,4 +18,6 @@ public interface EmpleadoService {
 
     // Se elimina el Empleado que tiene el id pasado por parámetro
     public void eliminar(Empleado empleado);
+    
+    public Empleado getById(Long idEmpleado);
 }

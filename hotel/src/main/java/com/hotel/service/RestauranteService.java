@@ -17,4 +17,6 @@ public interface RestauranteService {
 
     // Se elimina el categoria que tiene el id pasado por parámetro
     public void eliminar(Restaurante restaurante);
+    
+    public Restaurante getById(Long id);
 }
