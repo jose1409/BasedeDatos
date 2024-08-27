@@ -28,6 +28,8 @@
                 <input type="number" class="form-control" id="floatingMaximaCapacidad" th:field="*{maximaCapacidad}" placeholder="Capacidad Máxima">
                 <label for="floatingMaximaCapacidad">Capacidad Máxima</label>
             </div>
+            
+            <input type="hidden" th:field="*{idHabitacion}"/>
 
             <div class="mb-3 form-floating">
                 <select class="form-select" id="floatingIdHotel" th:field="*{hotel.idHotel}">
