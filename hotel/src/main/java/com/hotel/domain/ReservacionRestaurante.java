@@ -31,4 +31,14 @@ public class ReservacionRestaurante implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_cliente", nullable = false)
     private Cliente cliente;
+
+    public ReservacionRestaurante() {
+    }
+
+    public ReservacionRestaurante(Long idReservacionRestaurante, Date fechaReservacion, Time horaEntrada, Cliente cliente) {
+        this.idReservacionRestaurante = idReservacionRestaurante;
+        this.fechaReservacion = fechaReservacion;
+        this.horaEntrada = horaEntrada;
+        this.cliente = cliente;
+    }
 }
