@@ -36,7 +36,7 @@ public class FacRestaurante implements Serializable {
     @JoinColumn(name = "id_reservacion_restaurante", nullable = false)
     private ReservacionRestaurante reservacionRestaurante;
     
-    @OneToMany(mappedBy = "facturaRestaurante", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "fac_restaurante", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
     private List<PlatilloMultiple> platilloMultiple;
 
