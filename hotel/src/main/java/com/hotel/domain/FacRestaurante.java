@@ -20,9 +20,9 @@ import lombok.ToString;
 @Entity
 @Table(name = "fac_restaurante")
 public class FacRestaurante implements Serializable {
-   
+
     private static final long serialVersionUID = 1L;
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_fac_restaurante")
@@ -35,8 +35,8 @@ public class FacRestaurante implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_reservacion_restaurante", nullable = false)
     private ReservacionRestaurante reservacionRestaurante;
-    
-    @OneToMany(mappedBy = "fac_restaurante", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+
+    @OneToMany(mappedBy = "facturaRestaurante", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
     private List<PlatilloMultiple> platilloMultiple;
 
