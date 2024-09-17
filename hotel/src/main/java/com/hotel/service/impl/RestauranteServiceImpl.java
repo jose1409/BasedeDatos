@@ -33,4 +33,11 @@ public class RestauranteServiceImpl implements RestauranteService {
         var lista = restauranteDAO.findAll();
         return lista;
     }
+
+    @Override
+    public Restaurante getById(Long id) {
+        return restauranteDAO.findById(id).orElse(null);
+    }
+    
+    
 }

@@ -1,11 +1,11 @@
-<div th:fragment="ListaEmpleado">
+<div th:fragment="ListaFacRestaurantes">
 
     <div class="container-fluid">
         <div class="row p-4 mb-5" style="background-color: white">
             <div class="d-flex align-items-center" style="gap: 12px;">
-                <p class="mb-0 h1">Empleados</p>
+                <p class="mb-0 h1">Facturas Restaurantes</p>
                 <p class="mb-0 mt-2 h4">Gestion Hotelera</p>
-                <button onclick="loadComponent('/empleado/crear')" class="btn btn-primary">Agregar</button>
+                <button onclick="loadComponent('/hotel/crear')" class="btn btn-primary">Agregar</button>
             </div>
         </div>
     </div>
@@ -41,17 +41,15 @@
             <table class="table align-middle mb-0 bg-white">
                 <thead class="bg-light">
                     <tr>
-                        <th>Codigo</th>
-                        <th>Nombre Completo</th>
-                        <th>Cedula</th>
-                        <th>Correo</th>
-                        <th>Activo</th>
-                        <th>Puesto</th>
-                        <th>Actions</th>
+                        <th>Cliente</th>
+                        <th>Metodo de Pago</th>
+                        <th>Total</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="empleado : ${empleados}">
+                    <tr th:each="facRestaurantes : ${FacRestaurantes}">
                         <td>
                             <div class="d-flex align-items-center">
                                 <img
@@ -61,50 +59,66 @@
                                     style="width: 45px; height: 45px"
                                     />
                                 <div class="ms-3">
-                                    <p class="fw-bold mb-1" th:text="${empleado.persona.idPersona}"/>
+                                    <p class="fw-bold mb-1" th:text="${facRestaurantes.reservacionRestaurante.cliente.persona.nombre} + ${' ' + facRestaurantes.reservacionRestaurante.cliente.persona.primerApellido}"/>
+                                    <p class="text-muted mb-0" th:text="${facRestaurantes.reservacionRestaurante.cliente.persona.correo}"></p>
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1" th:text="${empleado.persona.nombre} + ${' ' + empleado.persona.primerApellido} + ${' ' + empleado.persona.segundoApellido}"/>
+                            <p class="fw-normal mb-1" th:text="${facRestaurantes.metodoPago}"></p>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1" th:text="${empleado.persona.cedula}">
+                            <p class="fw-normal mb-1" th:text="${'₡' + facRestaurantes.totalPagar}"></p>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1" th:text="${empleado.persona.correo}">
+                            <p class="fw-normal mb-1" th:text="${'Fecha: ' + facRestaurantes.reservacionRestaurante.fechaReservacion}"></p>
+                            <p class="fw-normal mb-1" th:text="${'Hora: ' + facRestaurantes.reservacionRestaurante.horaEntrada}"></p>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1" th:text="${empleado.estadoTrabajo ? 'Sí' : 'No'}">
-                        </td>
-                        <td>
-                            <p class="fw-normal mb-1" th:text="${empleado.cargo}">
-                        </td>
-                        <td>
-                            <p class="fw-normal mb-1" th:text="${empleado.idEmpleado}">
-                        </td>
-                        <td>
-                            <button
-                                th:onclick="'loadComponent(\'/empleado/modificar/' + ${empleado.idEmpleado} + '\', \'GET\')'"
+                            <button 
                                 type="button"
-                                class="btn btn-link btn-rounded btn-sm fw-bold"
-                                data-mdb-ripple-color="dark"
+                                class="btn btn-primary" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#consumedProductsModal"
                                 >
-                                Editar
+                                Ver detalles
                             </button>
-                            
+
                             <button
-                                th:onclick="'loadComponent(\'/empleado/eliminar/' + ${empleado.idEmpleado} + '\', \'Get\')'"
                                 type="button"
                                 class="btn btn-link btn-rounded btn-sm fw-bold"
                                 data-mdb-ripple-color="dark"
                                 >
-                                Eliminar
+                                Modificar
                             </button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="consumedProductsModal" tabindex="-1" aria-labelledby="consumedProductsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="consumedProductsModalLabel">Productos Consumidos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li th:each="platilloM : ${platilloMultiple}">
+                            <p>
+                                <span th:text="${platilloM.platillo.nombre}"></span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

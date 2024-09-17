@@ -1,0 +1,36 @@
+<div th:fragment="AgregarRestaurante">
+    <div class="container-fluid">
+        <div class="row p-4 mb-5" style="background-color: white">
+            <div class="d-flex align-items-center" style="gap: 12px;">
+                <p class="mb-0 h1">Agregar Cliente</p>
+                <p class="mb-0 mt-2 h4">Gestion Hotelera</p>
+                <button onclick="loadComponent('/cliente/inicio')" class="btn btn-primary">Volver</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <form class="form-floating" th:action="@{/restaurante/guardar}" th:object="${rest}" method="post">
+            <div class="mb-3 form-floating">
+                <input type="text" class="form-control" id="floatingNombre" th:field="*{nombre}" placeholder="Nombre">
+                <label for="floatingNombre">Nombre</label>
+            </div>
+            
+            
+            <div class="mb-3 form-floating">
+                <select class="form-select" id="floatingIdHotel" th:field="*{hotel.idHotel}">
+                    <option value="" disabled selected>Selecciona un Hotel</option>
+                    <option th:each="hotel : ${hoteles}" 
+                            th:value="${hotel.idHotel}" 
+                            th:text="${hotel.nombre}">Hotel</option>
+                </select>
+                <label for="floatingIdHotel">Hotel</label>
+            </div>
+            
+            
+            <input type="hidden" class="form-control" id="floatingCorreo" th:field="*{idRestaurante}">
+            
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>

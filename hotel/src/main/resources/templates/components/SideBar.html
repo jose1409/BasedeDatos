@@ -31,7 +31,7 @@
             </li>
             <li>
                 <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                    <i class="fs-4 bi bi-calendar-check-fill"></i> <span class="ms-1 d-none d-sm-inline">Reservaciones</span></a>
+                    <i class="fs-4 bi bi-calendar-check-fill"></i> <span class="ms-1 d-none d-sm-inline">Reservaciones de Hoteles</span></a>
                 <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                     <li class="w-100">
                         <a href="javascript:void(0);" onclick="loadComponent('/reservacionHabitacion/inicio')" class="nav-link px-0 bi bi-person-fill-check"> 
@@ -40,7 +40,16 @@
                     <li>
                         <a href="#" class="nav-link px-0 bi bi-person-fill-dash"> <span class="d-none d-sm-inline">Check Out</span></a>
                     </li>
+                    <li class="w-100">
+                        <a href="javascript:void(0);" onclick="loadComponent('/reservacionRestaurante/inicio')" class="nav-link px-0 bi bi-hand-index-fill"> 
+                            <span class="d-none d-sm-inline">Reservacion Restaurantes</span></a>
+                    </li>
                 </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);" onclick="loadComponent('/facRestaurante/inicio')" class="nav-link align-middle px-0">
+                    <i class="fs-4 bi bi-pie-chart-fill"></i> <span class="ms-1 d-none d-sm-inline">Facturas de Restaurantes</span>
+                </a>
             </li>
             <li>
                 <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">

@@ -12,8 +12,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import lombok.Data;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Data
 @Entity
@@ -32,6 +30,15 @@ public class PlatilloMultiple implements Serializable {
     private Platillo platillo;
 
     @ManyToOne
-    @JoinColumn(name = "id_factura_restaurante", nullable = false)
+    @JoinColumn(name = "id_fac_restaurante", nullable = false)
     private FacRestaurante facturaRestaurante;
+
+    public PlatilloMultiple() {
+    }
+
+    public PlatilloMultiple(Long idPlatilloMultiple, Platillo platillo, FacRestaurante facturaRestaurante) {
+        this.idPlatilloMultiple = idPlatilloMultiple;
+        this.platillo = platillo;
+        this.facturaRestaurante = facturaRestaurante;
+    }
 }
